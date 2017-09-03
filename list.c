@@ -1,10 +1,8 @@
-#include <stdlib.h>
+//
+// Created by schummacher on 2017/9/3.
+//
 
-typedef struct _list
-{
-    int data;
-    struct _list *next;
-} list;
+#include "list.h"
 
 int list_ref(list *head, int n)
 {
@@ -42,7 +40,7 @@ void print_list(list *head)
     printf("%d\n", head->data);
 }
 
-void insert(list *head, int *data, int num)
+void list_insert(list *head, int *data, int num)
 {
     list *ptr;
     while(head->next != NULL)

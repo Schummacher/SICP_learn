@@ -34,7 +34,7 @@
     (with-standard-io-syntax
       (setf *db* (read in)))))
 
-(load-db "a.db")
+(load-db "a.sdb")
 (add-cds)
 (print *db*)
-(save-db "a.db")
+(save-db "a.sdb")

@@ -16,20 +16,26 @@
     (car items)
     (db-ref (cdr items) (- n 1))))
 
-(defun select-read ()
-  (format *query-io* "~&1:find with times")
-  (format *query-io* "~&")
+;(defun select-read ()
+;  (format *query-io* "~&1:find with times")
+;  (format *query-io* "~&")
+;  (force-output *query-io*)
+;  (read-line *query-io*))
+
+(defun my-read (input)
+  (format *query-io* input)
   (force-output *query-io*)
   (read-line *query-io*))
 
-(defun times-read ()
-  (format *query-io* "~&Please input times you need: ")
-  (force-output *query-io*)
-  (read-line *query-io*))
+;(defun times-read ()
+;  (format *query-io* "~&Please input times you need: ")
+;  (force-output *query-io*)
+;  (read-line *query-io*))
 
 (defun sellect (i)
-  (cond ((= 1 i) (db-ref *db* (parse-integer (times-read))))))
+  (cond ((= 1 i) (db-ref *db* 
+			 (parse-integer (my-read "~&Please input times you need: "))))))
 
 (load-db "a.sdb")
 ;(print (sellect (select-read)))
-(print (sellect (parse-integer (select-read))))
+(print (sellect (parse-integer (my-read "~&1:find with times~&"))))

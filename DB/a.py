@@ -14,6 +14,7 @@ def select_form():
     print("1: Insert")
     print("2: Read")
     print("3: Find")
+    print("q: Quit")
 
 def sel():
     i = input()

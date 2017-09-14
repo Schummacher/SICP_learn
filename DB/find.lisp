@@ -32,9 +32,14 @@
 ;  (force-output *query-io*)
 ;  (read-line *query-io*))
 
+(defun my-print (tmp)
+  (if (null tmp)
+    nil
+    (or (format t "~&~A: ~A" (car tmp) (car (cdr tmp)))
+	(my-print (cdr (cdr tmp))))))
+
 (defun sellect (i)
-  (cond ((= 1 i) (db-ref *db* 
-			 (parse-integer (my-read "~&Please input times you need: "))))))
+  (cond ((= 1 i) (my-print (db-ref *db* (parse-integer (my-read "~&Please input times you need: ")))))))
 
 (load-db "a.sdb")
 ;(print (sellect (select-read)))

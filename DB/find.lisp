@@ -1,3 +1,4 @@
+;define stuct of database
 (defun make-cd (title artlist rating ripped)
   (list :title title :artlist artlist :rating rating :ripped ripped))
 
@@ -6,11 +7,13 @@
 (defun add-record (cd)
   (push cd *db*))
 
+;load file
 (defun load-db (filname)
   (with-open-file (in filname)
     (with-standard-io-syntax
       (setf *db* (read in)))))
 
+;list find
 (defun db-ref (items n)
   (if (= n 0)
     (car items)
@@ -22,6 +25,7 @@
 ;  (force-output *query-io*)
 ;  (read-line *query-io*))
 
+;function, print before read
 (defun my-read (input)
   (format *query-io* input)
   (force-output *query-io*)
@@ -56,6 +60,8 @@
 ;      (my-search-artist-sub item i)
 ;      (my-search-artist (cdr item) i))))
 
+
+;Variable Length cdr
 (defun cdr-times (lllist times)
   (if (= times 0)
     lllist
@@ -72,6 +78,7 @@
       (my-search-sub item i times)
       (my-search (cdr item) i times))))
 
+; f(x) = (x-1)*2-1 = x*2-3
 (defun times-calculate (times)
   (- (* times 2) 3))
 

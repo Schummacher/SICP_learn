@@ -1,7 +1,3 @@
-//
-// Created by schummacher on 2017/9/3.
-//
-
 #include "tree.h"
 
 int tree_count(tree *root)

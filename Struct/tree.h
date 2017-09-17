@@ -1,7 +1,3 @@
-//
-// Created by schummacher on 2017/9/3.
-//
-
 #ifndef SORT_TREE_H
 #define SORT_TREE_H
 

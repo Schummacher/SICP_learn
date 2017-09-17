@@ -1,7 +1,3 @@
-//
-// Created by schummacher on 2017/9/3.
-//
-
 #include "list.h"
 
 int list_ref(list *head, int n)

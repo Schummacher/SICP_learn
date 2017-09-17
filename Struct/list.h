@@ -1,7 +1,3 @@
-//
-// Created by schummacher on 2017/9/3.
-//
-
 #ifndef SORT_LIST_H
 #define SORT_LIST_H
 
